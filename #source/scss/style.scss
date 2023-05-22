@@ -1,0 +1,111 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+body{
+	background-color: #898989;
+}
+.sidebar{
+	height: 100%;
+	width: 20%;
+	position: fixed;
+	z-index:2;
+	background-color: #393939;
+	overflow-x: hidden;
+	color: #898989;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	.logo_scoala{
+		width: 90%;
+		height: auto;
+	}
+	li{
+		margin: 10% 0 10% 12%;
+		width: fit-content;
+		transition:0.2s;
+		a{
+			color:#898989;
+		}
+	}
+	li:after{
+		content:'';
+		width: 0;
+		display: block;
+		height: 1px;
+		background-color:rgb(230, 226, 221);
+		transition:0.2s
+	}
+	li:hover{
+		a{
+			color:white;
+		}
+		
+		&:after{
+			width:100%
+		}
+	}
+}
+.content{
+	margin-left: 20%;
+	.intro{
+		font-size: 50px;
+		font-weight: 700;
+		color: white;
+		line-height: 50px;
+		font-family: 'Montserrat',sans-serif;
+		text-align: center;
+		padding: 30px 0 30px 0;
+	}
+}
+.gallery{
+	margin: 0 auto;
+	background-color: #898989;
+	display: flex;
+	flex-grow: 1;
+	justify-content: space-around;
+	flex-wrap: wrap;
+	img{flex-grow: 1;
+		padding: 5px 0 5px 0;
+		border-radius: 3px;
+		max-width:49%;
+    	height: auto;
+		object-fit: cover;
+	}
+}
+@media (max-width:900px){
+	.gallery {
+		flex-direction: column !important;
+	}
+	.gallery img{
+		max-width: 100% !important;
+	}
+}
+	
