@@ -218,7 +218,7 @@ body{
 			left: -100%;
 			width: 100%;
 			height: 100%;
-			background-color: #303030d8;
+			background-color: #303030f4;
 			transition: left 0.3s ease 0s;
 			padding: 100px 40px 40px 40px;
 			overflow: auto;
@@ -237,13 +237,15 @@ body{
 			}
 			.menu__list > li{
 				margin:  50px auto;
-				&:last-list{
+				color: #fff;
+				&:last-child{
 					margin-bottom: 0;
 				}
 				
 			}
 			a{
 				font-size: 30px;
+				color: #bfbfbf;
 			}
 		}
 	}
