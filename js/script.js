@@ -1,5 +1,4 @@
 var images = [
-    ' img/fotosesie/image-109.jpg',
 ' img/fotosesie/image-113.jpg',
 ' img/fotosesie/image-114.jpg',
 ' img/fotosesie/image-124.jpg',
@@ -117,6 +116,7 @@ var images = [
 ' img/fotosesie/image-352-63.jpg',
 ' img/fotosesie/image-352-71.jpg',
 ' img/fotosesie/image-352-77.jpg',
+' img/fotosesie/image-109.jpg',
 ' img/fotosesie/image-352-84.jpg',
 ' img/fotosesie/image-352-87.jpg',
 ' img/fotosesie/image-352-89.jpg',
