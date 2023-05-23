@@ -43,6 +43,9 @@ body{
 	color: #898989;
 	font-size: 20px;
 	font-family: 'Montserrat', sans-serif;
+	.menu__icon{
+		display: none;
+	}
 	.logo_scoala{
 		width: 90%;
 		height: auto;
@@ -108,4 +111,107 @@ body{
 		max-width: 100% !important;
 	}
 }
+@media (max-width:800px){
+	body.lock{
+		overflow: hidden;
+	}
+	.sidebar{
+		width: 100%;
+		height: 80px;
+		position: fixed;
+		display: flex;
+		justify-content: space-between;
+		z-index: 5;
+		
+		.menu__icon{
+			margin: 50% 20px 0 0;
+			display: block;
+			z-index: 5;
+			position: relative;
+			cursor: pointer;
+			width: 30px;
+			height: 20px;
+			& span, &::before, 
+			&::after{
+				left: 0;
+				position: absolute;
+				height: 10%;
+				width: 100%;
+				transition: all 0.3s ease 0s;
+				background-color: #fff;
+
+			}
+			&::before, &::after{
+				content: '';
+			}
+			&::before{
+				top: 0;
+			}
+			&::after{
+				bottom: 0;
+			}
+			span{
+				top:50%;
+				transition: 0.3s;
+			}
+			&.active{
+				& span{
+					transform:scale(0) translate(0px,-50%);
+				}
+				&::before{
+					top:50%;
+					transform: rotate(-45deg) translate(0px, -50%);
+				}
+				&::after{
+					bottom:50%;
+					transform: rotate(45deg) translate(0px, 50%);
+				}
+			}
+		}
+		.logo_scoala{
+			margin: 0 0 0 15px;
+			width: auto;
+			height: 100%;
+			z-index: 5;
+		}
+		.menu__body{
+			z-index: 1;
+			position: fixed;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background-color: #303030bb;
+			transition: left 0.3s ease 0s;
+			padding: 100px 40px 40px 40px;
+			overflow: auto;
+			&.active{
+				left: 0;
+			}
+			&::before{
+				content:'';
+				top: 0;
+				left: 0;
+				position: fixed;
+				width: 100%;
+				height: 80px;
+				background-color: #232323;
+				z-index: 5;
+			}
+			.menu__list > li{
+				margin:  50px auto;
+				&:last-list{
+					margin-bottom: 0;
+				}
+				
+			}
+			a{
+				font-size: 30px;
+			}
+		}
+	}
+	.content{
+		margin: 0 auto;
+	}
 	
+}	

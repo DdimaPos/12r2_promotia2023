@@ -132,15 +132,23 @@ var images = [
 ' img/fotosesie/image-96.jpg',        
   ]; 
 
- var imageGallery = document.querySelector('.gallery');
+var imageGallery = document.querySelector('.gallery');
 
-  function displayImages() {
-    for (var i = 0; i < images.length; i++) {
-      var image = document.createElement('img');
-      image.src = images[i];
-      image.alt = 'Изображение';
-      imageGallery.appendChild(image);
-    }
+function displayImages() {
+  for (var i = 0; i < images.length; i++) {
+    var image = document.createElement('img');
+    image.src = images[i];
+    image.alt = 'Изображение';
+    imageGallery.appendChild(image);
   }
+}
 
-  displayImages();
+displayImages();
+const button = document.querySelector(".menu__icon");
+const menu = document.querySelector(".menu__body");
+button.addEventListener("click", function(ev){
+  document.body.classList.toggle("lock");
+  button.classList.toggle("active");
+  menu.classList.toggle("active");
+});
+
