@@ -161,20 +161,25 @@ if(animItems.length > 0){
       const animItemHeight = animItem.offsetHeight;
       const animItemOffset = offset(animItem).top;
       const animStart = 5;
-      if(index%2 == 0){
-        setTimeout(() => {
-          
-        }, 300);
-      }
       let animItemPoint = window.innerHeight - animItemHeight/animStart;
       if(animItemHeight > window.innerHeight){
         animItemPoint = window.innerHeight - window.innerHeight/animStart;
       }
 
-      if((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset+animItemHeight)){
-        animItem.classList.add("active");
+      if(index%2){
+        if((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset+animItemHeight)){
+          animItem.classList.add("active");
+        }else{
+          animItem.classList.remove("active");
+        }
       }else{
-        animItem.classList.remove("active");
+        setTimeout(() => {
+          if((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset+animItemHeight)){
+            animItem.classList.add("active");
+          }else{
+            animItem.classList.remove("active");
+          }
+        }, 300);
       }
     }
     function offset(el){

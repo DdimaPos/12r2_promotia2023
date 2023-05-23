@@ -189,11 +189,11 @@ body {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
-  -webkit-transform: translate(0, 40%);
-          transform: translate(0, 40%);
+  -webkit-transform: translate(0, 30%);
+          transform: translate(0, 30%);
   opacity: 0;
-  -webkit-transition: all 0.5s ease 0s;
-  transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.7s ease 0s;
+  transition: all 0.7s ease 0s;
 }
 .gallery img.active {
   opacity: 1;
