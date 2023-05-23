@@ -137,7 +137,7 @@ function displayImages() {
   for (var i = 0; i < images.length; i++) {
     var image = document.createElement('img');
     image.classList.add("anim__item");
-    image.src = images[i];
+    image.src = images[i]; 
     image.alt = 'Изображение';
     imageGallery.appendChild(image);
   }
