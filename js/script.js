@@ -20,7 +20,6 @@ var images = [
 ' img/fotosesie/image-173.jpg',
 ' img/fotosesie/image-178.jpg',
 ' img/fotosesie/image-181.jpg',
-' img/fotosesie/image-182.jpg',
 ' img/fotosesie/image-183.jpg',
 ' img/fotosesie/image-187.jpg',
 ' img/fotosesie/image-190.jpg',
