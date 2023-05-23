@@ -153,6 +153,16 @@ body {
   font-family: "Montserrat", sans-serif;
   text-align: center;
   padding: 30px 0 30px 0;
+  -webkit-transform: translate(0, 120%);
+          transform: translate(0, 120%);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.content .intro.active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 .gallery {
@@ -179,6 +189,16 @@ body {
   height: auto;
   -o-object-fit: cover;
      object-fit: cover;
+  -webkit-transform: translate(0, 40%);
+          transform: translate(0, 40%);
+  opacity: 0;
+  -webkit-transition: all 0.5s ease 0s;
+  transition: all 0.5s ease 0s;
+}
+.gallery img.active {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 @media (max-width: 900px) {
