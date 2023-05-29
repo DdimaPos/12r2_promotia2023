@@ -80,7 +80,6 @@ var images = [
 'img/fotosesie/image-352-243.jpg',
 'img/fotosesie/image-352-246.jpg',
 'img/fotosesie/image-352-252.jpg',
-'img/fotosesie/image-352-250.jpg',
 'img/fotosesie/image-352-259.jpg',
 'img/fotosesie/image-352-261.jpg',
 'img/fotosesie/image-352-266.jpg',
