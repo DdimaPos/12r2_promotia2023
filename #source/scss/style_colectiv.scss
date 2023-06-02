@@ -1,0 +1,283 @@
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+*,*:before,*:after{
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+:focus,:active{outline: none;}
+a:focus,a:active{outline: none;}
+nav,footer,header,aside{display: block;}
+html,body{
+	height: 100%;
+	width: 100%;
+	font-size: 100%;
+	line-height: 1;
+	font-size: 14px;
+	-ms-text-size-adjust: 100%;
+	-moz-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+input,button,textarea{font-family:inherit;}
+input::-ms-clear{display: none;}
+button{cursor: pointer;}
+button::-moz-focus-inner {padding:0;border:0;}
+a, a:visited{text-decoration: none;}
+a:hover{text-decoration: none;}
+ul li{list-style: none;}
+img{vertical-align: top;}
+h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
+body{
+	background-color: #898989;
+}
+.sidebar{
+	height: 100%;
+	width: 20%;
+	position: fixed;
+	z-index:2;
+	background-color: #393939;
+	overflow-x: hidden;
+	color: #898989;
+	font-size: 20px;
+	font-family: 'Montserrat', sans-serif;
+	.menu__icon{
+		display: none;
+	}
+	.logo_scoala{
+		width: 90%;
+		height: auto;
+	}
+	li{
+		margin: 10% 0 10% 5%;
+		width: fit-content;
+		transition:0.2s;
+		a{
+			color:#898989;
+		}
+	}
+	li:after{
+		content:'';
+		width: 0;
+		display: block;
+		height: 1px;
+		background-color:rgb(230, 226, 221);
+		transition:0.2s
+	}
+	li:hover{
+		a{
+			color:white;
+		}
+		
+		&:after{
+			width:100%
+		}
+	}
+	
+	.menu__download{
+		width: 30px;
+		height: 30px;
+		margin: 60px auto;
+		bottom: 80px;
+		img{
+			width: 30px;
+			height: auto;
+		}
+		.download__hover{
+			position: absolute;
+			opacity: 0;
+			transition: 0.3s;
+			&:hover{
+				opacity: 1;
+			}
+		}
+		.download__normal{
+			position: absolute;
+			opacity:1;
+		}
+	}
+}
+.content{
+	margin-left: 20%;
+	.intro{
+		font-size: 50px;
+		font-weight: 700;
+		color: white;
+		line-height: 50px;
+		font-family: 'Montserrat',sans-serif;
+		text-align: center;
+		padding: 30px 0 30px 0;
+		transform: translate(0, 120%);
+		opacity: 0;
+		transition: all 0.5s ease 0s;
+		&.active{
+			opacity: 1;
+			transform: translate(0, 0);
+		}
+	}
+}
+///////////////////////
+.gallery{
+	display: flex;
+	flex-direction: column;
+	.profesori{
+		display: flex;
+		justify-content: space-around ;
+		flex-wrap: wrap;
+		flex-basis: 28%;
+		.profesor{
+			font-family: 'Montserrat',sans-serif;
+			max-width: 28%;
+			transform: translate(0, 30%);
+			opacity: 0;
+			transition: all 0.7s ease 0s;
+			&.active{
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+			
+			.poza_nume{
+				border: 4px solid #fff;
+				border-radius: 2px;
+			}
+			img{
+				width: 100%;
+			}
+			.nume_prof{
+				background-color: #fff;
+				width: fit-content;
+				position: absolute;
+				padding: 3px;
+				border-radius: 0 0 5px 0;
+			}
+			.obiect{
+				width: fit-content;
+				margin: 5px auto;
+				font-weight: 550;
+				color: #fff;
+			}
+		}
+	}
+	.elevi{
+		
+	}
+}
+@media (max-width:900px){
+	.gallery {
+		flex-direction: column !important;
+	}
+	.gallery img{
+		max-width: 100% !important;
+	}
+}
+@media (max-width:800px){
+	body.lock{
+		overflow: hidden;
+	}
+	.sidebar{
+		width: 100%;
+		height: 80px;
+		position: fixed;
+		display: flex;
+		justify-content: space-between;
+		z-index: 5;
+		
+		.menu__icon{
+			margin: 50% 20px 0 0;
+			display: block;
+			z-index: 5;
+			position: relative;
+			cursor: pointer;
+			width: 30px;
+			height: 20px;
+			& span, &::before, 
+			&::after{
+				left: 0;
+				position: absolute;
+				height: 10%;
+				width: 100%;
+				transition: all 0.3s ease 0s;
+				background-color: #fff;
+
+			}
+			&::before, &::after{
+				content: '';
+			}
+			&::before{
+				top: 0;
+			}
+			&::after{
+				bottom: 0;
+			}
+			span{
+				top:50%;
+				transition: 0.3s;
+			}
+			&.active{
+				& span{
+					transform:scale(0) translate(0px,-50%);
+				}
+				&::before{
+					top:50%;
+					transform: rotate(-45deg) translate(0px, -50%);
+				}
+				&::after{
+					bottom:50%;
+					transform: rotate(45deg) translate(0px, 50%);
+				}
+			}
+		}
+		.logo_scoala{
+			margin: 0 0 0 15px;
+			width: auto;
+			height: 100%;
+			z-index: 5;
+		}
+		.menu__body{
+			z-index: 1;
+			position: fixed;
+			top: 0;
+			left: -100%;
+			width: 100%;
+			height: 100%;
+			background-color: #303030f4;
+			transition: left 0.3s ease 0s;
+			padding: 100px 40px 40px 40px;
+			overflow: auto;
+			&.active{
+				left: 0;
+			}
+			&::before{
+				content:'';
+				top: 0;
+				left: 0;
+				position: fixed;
+				width: 100%;
+				height: 80px;
+				background-color: #232323;
+				z-index: 5;
+			}
+			.menu__list > li{
+				margin:  50px auto;
+				color: #fff;
+				&:last-child{
+					margin-bottom: 0;
+				}
+				
+			}
+			a{
+				font-size: 30px;
+				color: #bfbfbf;
+			}
+		}
+	}
+	.content{
+		margin: 0 auto;
+		.intro{
+			padding-top: 100px;
+		}
+	}
+	
+}	
