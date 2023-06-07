@@ -161,7 +161,42 @@ body{
 		}
 	}
 	.elevi{
-		
+		display: flex;
+		justify-content: space-around;
+		flex-wrap: wrap;
+		flex-basis: 23%;
+		.elev{
+			font-family: 'Montserrat',sans-serif;
+			max-width: 23%;
+			transform: translate(0, 30%);
+			opacity: 0;
+			transition: all 0.7s ease 0s;
+			&.active{
+				opacity: 1;
+				transform: translate(0, 0);
+			}
+			.poza_nume{
+				border: 4px solid #676767;
+				border-radius: 2px;
+			}
+			img{
+				width: 100%;
+			}
+			.nume_elev{
+				background-color: #676767;
+				width: fit-content;
+				position: absolute;
+				color: white;
+				padding: 3px;
+				border-radius: 0 0 5px 0;
+			}
+			.citat{
+				width: fit-content;
+				margin: 5px auto;
+				font-weight: 550;
+				color: #fff;
+			}
+		}
 	}
 }
 @media (max-width:900px){
