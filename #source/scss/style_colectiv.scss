@@ -314,5 +314,33 @@ body{
 			padding-top: 100px;
 		}
 	}
+	.citat{
+		font-size: 10px;
+	}
 	
 }	
+@media(max-width:500px){
+	.nume_prof{
+		position: static !important;
+		width: 100% !important;
+		border-radius: 0 0 0 0 !important;
+
+	}
+	.nume_elev{
+		position: static !important;
+		width: 100% !important;
+		border-radius: 0 0 0 0 !important;
+	}
+	.profesori{
+		flex-basis:45% !important;
+		.profesor{
+			max-width: 45% !important;
+		}
+	}
+	.elevi{
+		flex-basis: 29% !important;
+		.elev{
+			max-width: 29% !important;
+		}
+	}
+}

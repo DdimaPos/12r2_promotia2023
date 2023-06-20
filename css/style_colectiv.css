@@ -396,4 +396,33 @@ body {
   .content .intro {
     padding-top: 100px;
   }
+  .citat {
+    font-size: 10px;
+  }
+}
+@media (max-width: 500px) {
+  .nume_prof {
+    position: static !important;
+    width: 100% !important;
+    border-radius: 0 0 0 0 !important;
+  }
+  .nume_elev {
+    position: static !important;
+    width: 100% !important;
+    border-radius: 0 0 0 0 !important;
+  }
+  .profesori {
+    -ms-flex-preferred-size: 45% !important;
+        flex-basis: 45% !important;
+  }
+  .profesori .profesor {
+    max-width: 45% !important;
+  }
+  .elevi {
+    -ms-flex-preferred-size: 29% !important;
+        flex-basis: 29% !important;
+  }
+  .elevi .elev {
+    max-width: 29% !important;
+  }
 }
