@@ -56,7 +56,6 @@ var images = [
 'img/fotosesie/image-352-155.jpg',
 'img/fotosesie/image-352-156.jpg',
 'img/fotosesie/image-352-161.jpg',
-'img/fotosesie/IMG_1117.JPG',
 'img/fotosesie/IMG_1119.JPG',
 'img/fotosesie/image-352-163.jpg',
 'img/fotosesie/image-352-169.jpg',
