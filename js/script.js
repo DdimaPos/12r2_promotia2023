@@ -1,3 +1,6 @@
+import ImageAnimation from "./animation.js";
+import MenuLogic from "./menu.js";
+import LazyLoading from "./lazyloading.js";
 var images = [
   "img/fotosesie/image-113.jpg",
   "img/fotosesie/image-7.jpg",
@@ -95,7 +98,7 @@ var images = [
   "img/fotosesie/image-352-42.jpg",
   "img/fotosesie/image-352-46.jpg",
   "img/fotosesie/image-352-50.jpg",
-  "img/fotosesie/image-352-51.jpg",
+  "img/fotosesie/image-352-51..jpg",
   "img/fotosesie/image-352-52.jpg",
   "img/fotosesie/image-352-6.jpg",
   "img/fotosesie/image-352-63.jpg",
@@ -114,97 +117,25 @@ var images = [
 //populate the dom with the images
 var imageGallery = document.querySelector(".gallery");
 //<img class="anim__item" src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" data-src="actual.img" alt="Image">
-function displayImages() {
-  for (var i = 0; i < images.length; i++) {
+function displayImages(image_arr) {
+  for (var i = 0; i < image_arr.length; i++) {
     var image = document.createElement("img");
     image.classList.add("anim__item");
     image.classList.add("lazy");
     image.src =
       "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg";
-    image.setAttribute("data-src", images[i]);
+    image.setAttribute("data-src", image_arr[i]);
     image.alt = "Image";
     imageGallery.appendChild(image);
   }
 }
 
-displayImages();
+displayImages(images);
 
 //implement lazy loading
 document.addEventListener("DOMContentLoaded", function () {
-  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
-  if ("IntersectionObserver" in window) {
-    let lazyImageObserver = new IntersectionObserver(function (
-      entries,
-      _,
-    ) {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          let lazyImage = entry.target;
-          lazyImage.src = lazyImage.dataset.src;
-          lazyImage.classList.remove("lazy");
-          lazyImageObserver.unobserve(lazyImage);
-        }
-      });
-    });
-    lazyImages.forEach(function (lazyImage) {
-      lazyImageObserver.observe(lazyImage);
-    });
-  }
+  LazyLoading();
 });
 
-
-///Menu
-const button = document.querySelector(".menu__icon");
-const menu = document.querySelector(".menu__body");
-button.addEventListener("click", function (ev) {
-  document.body.classList.toggle("lock");
-  button.classList.toggle("active");
-  menu.classList.toggle("active");
-});
-
-//Animation
-const animItems = document.querySelectorAll(".anim__item");
-if (animItems.length > 0) {
-  window.addEventListener("scroll", animOnScroll);
-  function animOnScroll(params) {
-    for (let index = 0; index < animItems.length; index++) {
-      const animItem = animItems[index];
-      const animItemHeight = animItem.offsetHeight;
-      const animItemOffset = offset(animItem).top;
-      const animStart = 5;
-      let animItemPoint = window.innerHeight - animItemHeight / animStart;
-      if (animItemHeight > window.innerHeight) {
-        animItemPoint = window.innerHeight - window.innerHeight / animStart;
-      }
-
-      if (index % 2) {
-        if (
-          pageYOffset > animItemOffset - animItemPoint &&
-          pageYOffset < animItemOffset + animItemHeight
-        ) {
-          animItem.classList.add("active");
-        } else {
-          animItem.classList.remove("active");
-        }
-      } else {
-        setTimeout(() => {
-          if (
-            pageYOffset > animItemOffset - animItemPoint &&
-            pageYOffset < animItemOffset + animItemHeight
-          ) {
-            animItem.classList.add("active");
-          } else {
-            animItem.classList.remove("active");
-          }
-        }, 300);
-      }
-    }
-    function offset(el) {
-      const rect = el.getBoundingClientRect(),
-        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
-        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
-    }
-  }
-  animOnScroll();
-}
+MenuLogic();
+ImageAnimation();

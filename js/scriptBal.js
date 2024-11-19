@@ -1,3 +1,6 @@
+import ImageAnimation from "./animation.js";
+import MenuLogic from "./menu.js";
+import LazyLoading from "./lazyloading.js";
 var images = [
   "img/bal/1.jpg",
   "img/bal/2.jpg",
@@ -93,7 +96,7 @@ function displayImages() {
 }
 displayImages();
 //lazy loading
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
   if ("IntersectionObserver" in window) {
     let lazyImageObserver = new IntersectionObserver(function (
@@ -170,4 +173,11 @@ if (animItems.length > 0) {
     }
   }
   animOnScroll();
-}
+}*/
+//implement lazy loading
+document.addEventListener("DOMContentLoaded", function () {
+  LazyLoading();
+});
+
+MenuLogic();
+ImageAnimation();
