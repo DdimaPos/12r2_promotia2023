@@ -1,6 +1,7 @@
 import ImageAnimation from "./animation.js";
 import MenuLogic from "./menu.js";
 import LazyLoading from "./lazyloading.js";
+import InsertImages from "./insertimages.js";
 var images = [
   "img/30mai/Igor Bogaciov Photography-102.jpg",
   "img/30mai/Igor Bogaciov Photography-106.jpg",
@@ -73,23 +74,8 @@ var images = [
 ];
 
 //populate the dom with the images
-var imageGallery = document.querySelector(".gallery");
 
-function displayImages() {
-  for (var i = 0; i < images.length; i++) {
-    var image = document.createElement("img");
-    image.classList.add("anim__item");
-    image.classList.add("lazy");
-    image.src =
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg";
-    image.setAttribute("data-src", images[i]);
-    image.alt = "Image";
-    imageGallery.appendChild(image);
-  }
-}
-
-displayImages();
-
+InsertImages(images);
 //implement lazy loading
 
 document.addEventListener("DOMContentLoaded", function () {

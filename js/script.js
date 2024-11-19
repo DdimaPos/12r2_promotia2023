@@ -1,6 +1,7 @@
 import ImageAnimation from "./animation.js";
 import MenuLogic from "./menu.js";
 import LazyLoading from "./lazyloading.js";
+import InsertImages from "./insertimages.js";
 var images = [
   "img/fotosesie/image-113.jpg",
   "img/fotosesie/image-7.jpg",
@@ -98,7 +99,7 @@ var images = [
   "img/fotosesie/image-352-42.jpg",
   "img/fotosesie/image-352-46.jpg",
   "img/fotosesie/image-352-50.jpg",
-  "img/fotosesie/image-352-51..jpg",
+  "img/fotosesie/image-352-51.jpg",
   "img/fotosesie/image-352-52.jpg",
   "img/fotosesie/image-352-6.jpg",
   "img/fotosesie/image-352-63.jpg",
@@ -115,24 +116,9 @@ var images = [
 ];
 
 //populate the dom with the images
-var imageGallery = document.querySelector(".gallery");
 //<img class="anim__item" src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" data-src="actual.img" alt="Image">
-function displayImages(image_arr) {
-  for (var i = 0; i < image_arr.length; i++) {
-    var image = document.createElement("img");
-    image.classList.add("anim__item");
-    image.classList.add("lazy");
-    image.src =
-      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg";
-    image.setAttribute("data-src", image_arr[i]);
-    image.alt = "Image";
-    imageGallery.appendChild(image);
-  }
-}
-
-displayImages(images);
-
 //implement lazy loading
+InsertImages(images)
 document.addEventListener("DOMContentLoaded", function () {
   LazyLoading();
 });
