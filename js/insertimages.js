@@ -1,6 +1,6 @@
 export default function InsertImages(image_arr) {
   var imageGallery = document.querySelector(".gallery");
-    console.log("gallery tag selected");
+  //console.log("gallery tag selected");
   for (var i = 0; i < image_arr.length; i++) {
     var image = document.createElement("img");
     image.classList.add("anim__item");
@@ -12,5 +12,5 @@ export default function InsertImages(image_arr) {
     imageGallery.appendChild(image);
   }
 
-    console.log("all images appended");
+  //console.log("all images appended");
 }

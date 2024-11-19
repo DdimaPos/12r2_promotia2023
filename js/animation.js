@@ -2,7 +2,7 @@ export default function ImageAnimation() {
   var animItems = document.querySelectorAll(".anim__item");
   if (animItems.length > 0) {
     window.addEventListener("scroll", animOnScroll);
-    function animOnScroll(params) {
+    function animOnScroll() {
       for (let index = 0; index < animItems.length; index++) {
         const animItem = animItems[index];
         const animItemHeight = animItem.offsetHeight;

@@ -115,9 +115,7 @@ var images = [
   "img/fotosesie/image-96.jpg",
 ];
 
-//populate the dom with the images
 //<img class="anim__item" src="https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg" data-src="actual.img" alt="Image">
-//implement lazy loading
 InsertImages(images)
 document.addEventListener("DOMContentLoaded",  LazyLoading);
 

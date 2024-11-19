@@ -73,16 +73,7 @@ var images = [
   "img/30mai/Igor Bogaciov Photography.jpg",
 ];
 
-//populate the dom with the images
-
 InsertImages(images);
-//implement lazy loading
-
-document.addEventListener("DOMContentLoaded", function () {
-     LazyLoading();
-});
-
-//Menu
+document.addEventListener("DOMContentLoaded", LazyLoading);
 MenuLogic()
-//Animation
 ImageAnimation();

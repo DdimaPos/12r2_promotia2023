@@ -83,9 +83,7 @@ var images = [
 //populate DOM with images
 InsertImages(images);
 //implement lazy loading
-document.addEventListener("DOMContentLoaded", function () {
-  LazyLoading();
-});
+document.addEventListener("DOMContentLoaded",LazyLoading);
 
 MenuLogic();
 ImageAnimation();
