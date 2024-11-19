@@ -76,20 +76,45 @@ var images = [
   "img/bal/www.ionciorici.com-908.jpg",
   "img/bal/www.ionciorici.com-909.jpg",
 ];
-
+//populate DOM with images
 var imageGallery = document.querySelector(".gallery");
 
 function displayImages() {
   for (var i = 0; i < images.length; i++) {
     var image = document.createElement("img");
     image.classList.add("anim__item");
-    image.src = images[i];
-    image.alt = "Изображение";
+    image.classList.add("lazy");
+    image.src =
+      "https://ralfvanveen.com/wp-content/uploads/2021/06/Placeholder-_-Glossary.svg";
+    image.setAttribute("data-src", images[i]);
+    image.alt = "Image";
     imageGallery.appendChild(image);
   }
 }
-
 displayImages();
+//lazy loading
+document.addEventListener("DOMContentLoaded", function () {
+  var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+  if ("IntersectionObserver" in window) {
+    let lazyImageObserver = new IntersectionObserver(function (
+      entries,
+      _,
+    ) {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          let lazyImage = entry.target;
+          lazyImage.src = lazyImage.dataset.src;
+          lazyImage.classList.remove("lazy");
+          lazyImageObserver.unobserve(lazyImage);
+        }
+      });
+    });
+    lazyImages.forEach(function (lazyImage) {
+      lazyImageObserver.observe(lazyImage);
+    });
+  }
+});
+
 
 //Menu
 const button = document.querySelector(".menu__icon");
